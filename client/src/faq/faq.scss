@@ -1,0 +1,120 @@
+p {
+  color: #535353;
+}
+
+.faq {
+  background: #f7f9fc;
+  padding: 3rem 0 4rem;
+
+  .faq-intro {
+    color: #5a6a80;
+    font-size: 1.05rem;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .faq-accordion {
+    --faq-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --faq-dur: 0.38s;
+
+    .accordion-item {
+      border: 1px solid #e4ebf4 !important;
+      border-radius: 12px !important;
+      overflow: hidden;
+      background: #fff !important;
+      box-shadow: 0 6px 20px rgba(16, 40, 80, 0.05);
+      margin-bottom: 0.85rem;
+      transition: box-shadow var(--faq-dur) var(--faq-ease),
+        border-color var(--faq-dur) ease;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:has(.accordion-button:not(.collapsed)),
+      &.active {
+        border-color: rgba(0, 74, 173, 0.28) !important;
+        box-shadow: 0 10px 28px rgba(0, 74, 173, 0.1);
+      }
+    }
+
+    .accordion-button {
+      background: #fff !important;
+      border: 0 !important;
+      box-shadow: none !important;
+      padding: 1.1rem 1.25rem !important;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #12253f;
+      gap: 0.75rem;
+      transition: background-color var(--faq-dur) ease,
+        color var(--faq-dur) ease;
+
+      &::after {
+        background-size: 1rem;
+        transition: transform var(--faq-dur) var(--faq-ease),
+          filter var(--faq-dur) ease;
+        flex-shrink: 0;
+      }
+
+      &:not(.collapsed) {
+        color: #004aad;
+        background: rgba(0, 74, 173, 0.04) !important;
+
+        &::after {
+          filter: invert(28%) sepia(86%) saturate(1800%) hue-rotate(201deg);
+        }
+      }
+
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+
+    .accordion-collapse {
+      transition: height var(--faq-dur) var(--faq-ease) !important;
+    }
+
+    .accordion-body {
+      padding: 0 1.25rem 1.2rem !important;
+      color: #535353;
+      line-height: 1.65;
+
+      .faq-answer {
+        p {
+          margin-bottom: 0.65rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        ul {
+          margin: 0.35rem 0 0.65rem;
+          padding-left: 1.2rem;
+        }
+
+        a {
+          color: #004aad;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.sidebox {
+  border-radius: 12px;
+  box-shadow: 0px 0px 5px #d6d6d6;
+
+  h4 {
+    color: #1b1a1a;
+    text-transform: capitalize;
+    font-weight: 500;
+  }
+
+  p {
+    color: #535353;
+  }
+}

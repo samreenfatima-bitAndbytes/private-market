@@ -1,0 +1,34 @@
+p {
+    color: #535353;
+}
+
+.breadcrumbs {
+    &.bluebg{
+    background: #004AAD !important;
+
+    &:after {
+        display: none !important;
+    }
+
+   
+}
+}
+
+.side-bar-hd {
+    h4 {
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+
+    p {
+        font-size: 16px;
+        color: #656464;
+    }
+}
+
+.eyeicon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}

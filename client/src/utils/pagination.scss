@@ -1,0 +1,22 @@
+.page-item {
+  a {
+    color: var(--dark-one);
+  }
+
+  &.active {
+    a {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+    }
+  }
+}
+
+.page-link {
+  &:focus {
+    box-shadow: none !important;
+    color: var(--dark-two) !important;
+  }
+  &:hover {
+    color: var(--dark-two) !important;
+  }
+}

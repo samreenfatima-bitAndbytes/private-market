@@ -1,0 +1,92 @@
+@media (max-width: 1420px) {
+  .navbar-brand {
+    width: 150px;
+  }
+}
+
+@media (max-width: 991px) {
+  .steps {
+    ul {
+      li {
+        font-size: 12px;
+      }
+    }
+  }
+  .bannermain {
+    .searchform {
+      select {
+        font-size: 14px;
+      }
+      .searchbox {
+        input {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  input[type="radio"] {
+    &.asButton + label {
+      font-size: 14px;
+    }
+  }
+  .breadcrumbs {
+    padding: 70px 0;
+
+    h1 {
+      font-size: 40px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .feature_paginations {
+    text-align: center;
+    justify-content: center;
+  }
+
+  footer {
+    padding: 40px 0 20px;
+    background: #051325;
+  }
+  .navbar {
+    a {
+      &.logo {
+        svg {
+          width: 168px !important;
+          max-height: 40px;
+        }
+      }
+    }
+  }
+
+  footer {
+    span {
+      &.logo {
+        svg {
+          width: 168px !important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575px) {
+  .bannermain {
+    .searchform {
+      select {
+        font-size: 12px;
+      }
+      .searchbox {
+        input {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  input[type="radio"] {
+    &.asButton + label {
+      font-size: 12px;
+    }
+  }
+}

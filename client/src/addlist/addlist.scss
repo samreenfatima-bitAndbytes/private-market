@@ -1,0 +1,191 @@
+p {
+    color: #535353;
+}
+
+.steps {
+    ul {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        position: relative;
+
+        li {
+            color: #6f6f6d;
+            padding-left: 0.625rem;
+            padding-right: 0.625rem;
+            text-align: center;
+            vertical-align: middle;
+            width: 33.3%;
+            font-size: 1.25rem;
+            position: relative;
+
+            span {
+                display: block;
+                width: 40px;
+                height: 40px;
+                background: #fff;
+                border-radius: 50%;
+                line-height: 40px;
+                border: 1px solid #535353;
+                margin: auto;
+                z-index: 0;
+
+                &::before {
+                    border-bottom: 2px dashed #eee;
+                    content: " ";
+                    display: block;
+                    height: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 32%;
+                    width: 100%;
+                    left: 50%;
+                    z-index: -1;
+                    background: #fff;
+                }
+            }
+
+            &:first-child {
+                .active {
+                    padding-left: 0.625rem;
+                }
+            }
+
+            &.active {
+                color: #004aad !important;
+
+                .steps ul li.active {
+                    color: #004aad;
+                    padding-left: 1.875rem;
+                    padding-right: 0;
+                    position: relative;
+                }
+
+                span {
+                    background-color: #004aad;
+                    border-color: #004aad;
+                    color: #fff;
+                }
+
+                color: #fff;
+                padding-left: 1.875rem;
+                padding-right: 0;
+                position: relative;
+            }
+
+            + li {
+                padding-left: 1.875rem;
+            }
+            &:last-child {
+                span {
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.input-group-text {
+    border-radius: 0;
+}
+
+.labelhead {
+    font-weight: 600;
+}
+
+.img-block {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 0 8px 8px 0;
+    vertical-align: top;
+    position: relative;
+}
+
+.img-fluid2 {
+    position: static;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bg-gray {
+    background-color: #c3d3e5;
+    border: 2px solid #c3d3e5;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: #c3d3e5;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.image-btn {
+    border: 2px solid transparent;
+    background-color: transparent;
+    padding: 2px 15px;
+    font-size: 25px !important;
+}
+
+.upload-btn-wrapper input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.remove_img {
+    background-color: #004aad;
+    border-radius: 69%;
+    border: 1px solid #004aad;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 11px;
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    display: block;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+}
+
+textarea {
+    height: 100px !important;
+}
+
+.image-grid {
+    display: flex !important;
+    width: 100% !important;
+    flex-flow: wrap !important;
+    gap: 10px;
+}
+.image-grid_1{
+    display: flex !important;
+    width: 100% !important;
+    flex-flow: wrap !important;
+    gap: 10px;
+}
+.image-grid_1 > div{
+    flex: calc(25% - 10px);
+	max-width: calc(25% - 10px);
+}
+.image-grid > div{
+    flex: calc(15% - 10px);
+	max-width: calc(15% - 10px);
+}

@@ -1,0 +1,497 @@
+html {
+  overflow-x: clip;
+}
+
+body,
+#root {
+  width: 100%;
+  /* Avoid overflow-x:hidden here — it breaks position:sticky sidebars */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  overflow-x: clip;
+}
+
+* {
+  font-family: "Public Sans", sans-serif;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.font20 {
+  font-size: 20px !important;
+  line-height: 20px;
+}
+
+.font18 {
+  font-size: 18px !important;
+}
+
+.font15 {
+  font-size: 15px !important;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.colorblue {
+  color: #004aad;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #1b1a1a;
+  font-weight: 600;
+}
+
+.text-underline {
+  text-decoration: underline !important;
+}
+
+.form-group {
+  label {
+    margin-bottom: 5px;
+  }
+
+  .form-control {
+    height: 55px;
+    border-width: 1px !important;
+    line-height: 55px !important;
+    padding: 0 20px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+}
+
+.btn {
+  outline: 0 !important;
+  border: 0 !important;
+  box-shadow: none;
+  height: 46px;
+  line-height: 46px;
+  padding: 0 25px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 0;
+
+  &.btn-white {
+    background: #fff;
+    font-size: 16px;
+    border: 1px solid #fff !important;
+    color: #000;
+
+    &:hover {
+      color: #fff !important;
+      background: transparent;
+    }
+  }
+
+  &.btn-sm {
+    padding: 5px 15px !important;
+    line-height: 45px;
+    height: 45px !important;
+    font-size: 16px;
+    font-weight: 400 !important;
+    min-height: 45px;
+    border-radius: 5px !important;
+  }
+
+  &.btn-default {
+    background-color: #e5e6e1;
+    border: 0.0625rem solid #a3a3a0;
+    box-shadow: inset 0 -0.0625rem 0.0625rem 0 #a3a3a0,
+      inset 0 0.0625rem 0.0625rem 0 #fff;
+    color: #141414 !important;
+    text-shadow: 0 0.0625rem 0 #fff;
+
+    &:hover {
+      background: #cbccc7;
+    }
+
+    &.selected {
+      background-color: #4d4d4c;
+      border-color: #a3a3a0;
+      color: #fff !important;
+    }
+  }
+
+  &.bg-green {
+    background: #1a8400 !important;
+    border: 1px solid #1a8400 !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+
+    &:hover {
+      background-color: #fff !important;
+      color: #1a8400 !important;
+      border-color: #1a8400 !important;
+    }
+  }
+
+  &.bg-info {
+    background: #54b4d3 !important;
+    border: 1px solid #54b4d3 !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+
+    &:hover {
+      background-color: #fff !important;
+      color: #54b4d3 !important;
+      border-color: #54b4d3 !important;
+    }
+  }
+
+  &.bg-warning {
+    background: #e4a11b !important;
+    border: 1px solid #e4a11b !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+
+    &:hover {
+      background-color: #fff !important;
+      color: #e4a11b !important;
+      border-color: #e4a11b !important;
+    }
+  }
+  &.bg-red {
+    background: #e5252a !important;
+    border: 1px solid #e5252a !important;
+    color: #fff !important;
+    border-radius: 5px !important;
+
+    &:hover {
+      background-color: #fff !important;
+      color: #e5252a !important;
+      border-color: #e5252a !important;
+    }
+  }
+
+  &.btn-theme2-outline {
+    background: #fff;
+    border: 1px solid #9a9a9a !important;
+    border-radius: 0 !important;
+    color: #9a9a9a !important;
+
+    &:hover {
+      background-color: #9a9a9a;
+      color: #fff !important;
+      border-color: #9a9a9a !important;
+    }
+  }
+
+  &.btn-theme2 {
+    background: #004aad;
+    color: #fff;
+    border: 1px solid #004aad !important;
+    border-radius: 5px !important;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease,
+      border-color 0.2s ease,
+      box-shadow 0.25s ease,
+      transform 0.2s ease;
+
+    &:hover {
+      background-color: #fff;
+      color: #004aad;
+      border-color: #004aad !important;
+    }
+  }
+}
+
+a {
+  color: #004aad !important;
+  text-decoration: none !important;
+  transition: color 0.18s ease;
+
+  &:hover {
+    color: #000 !important;
+  }
+}
+
+.modal {
+  .btn-close {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    background: rgb(0, 74, 173);
+    opacity: 1;
+    border-radius: 50%;
+    color: #fff !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 35px;
+    width: 20px;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+      transform: rotate(90deg);
+    }
+
+    &:after {
+      content: "X";
+    }
+  }
+
+  .modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 20px 15px;
+  }
+
+  .modal-content {
+    border: 0;
+    box-shadow: 0 16px 48px rgba(16, 24, 40, 0.18);
+  }
+}
+
+/* Register modal — login-width, balanced spacing */
+.auth-modal-register {
+  .modal-dialog {
+    max-width: 520px;
+  }
+
+  .modal-body {
+    padding: 2.75rem 3.75rem 2.85rem !important;
+  }
+
+  .auth-register-form {
+    .row {
+      --bs-gutter-x: 1rem;
+      --bs-gutter-y: 0.25rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .form-group {
+      margin-bottom: 0.85rem !important;
+    }
+
+    label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+
+    .form-control {
+      min-height: 44px;
+      font-size: 14px;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+
+    .password-input-wrap .form-control {
+      padding-right: 2.85rem !important;
+    }
+
+    .text-danger.small {
+      display: block;
+      min-height: 0;
+      margin-top: 2px;
+    }
+  }
+
+  .auth-register-checks {
+    font-size: 13px;
+    line-height: 1.45;
+    margin-top: 0.35rem;
+    margin-bottom: 0.65rem;
+
+    p,
+    label {
+      margin-bottom: 0;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+  }
+
+  .d-grid {
+    margin-top: 1rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+}
+
+.height120 {
+  height: 120px !important;
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  object-fit: cover;
+}
+
+.file-upload {
+  display: none;
+}
+
+.circle {
+  border-radius: 100% !important;
+  width: 128px;
+  height: 128px;
+  border: 1px solid #bbbbbb;
+  position: relative;
+  background: #f4f4f4;
+}
+
+.p-image {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: #666666;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: #fff;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.aboutus {
+  background: #f7f9fc;
+}
+
+.pagination {
+  justify-content: end;
+  column-gap: 2px;
+
+  li {
+    a {
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+      background-color: transparent;
+      border: 1px solid var(--border-color-one) !important;
+    }
+
+    .pagination__link {
+      color: var(--dark-one) !important;
+    }
+
+    &.pagination__link--active {
+      a {
+        background: #004aad;
+        border-color: var(--primary-color);
+        color: var(--white) !important;
+      }
+    }
+
+    &.previous {
+      background-color: #e9ecef !important;
+    }
+  }
+
+  .page-link {
+    &:focus {
+      box-shadow: none !important;
+      color: var(--dark-two) !important;
+    }
+
+    &:hover {
+      color: var(--dark-two) !important;
+    }
+  }
+}
+
+.aboutus {
+  background: #f7f9fc;
+}
+
+.mainheading {
+  font-size: 1.75rem;
+  line-height: 1.28;
+}
+
+span {
+  &.img-icn {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
+
+input.form-control,
+.form-select {
+  min-height: 50px;
+}
+.form-control {
+  &[type="file"] {
+    line-height: 36px;
+  }
+}
+
+.userprofile {
+  width: 180px;
+  height: 180px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// Common BreadCrumbs
+
+.breadcrumbs {
+  background: url("/breadbanner.jpg");
+  padding: 140px 0;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  z-index: 0;
+
+  &:after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  h1 {
+    font-size: 65px;
+    font-weight: 500;
+    color: #fff;
+  }
+}
+
+.form-group {
+  .css-b62m3t-container {
+    .css-13cymwt-control,
+    .css-t3ipsp-control {
+      height: 55px;
+    }
+  }
+}
+
+.border-main {
+  a {
+    border: 1px solid #004aad !important;
+    padding: 7px;
+    border-radius: 5px;
+  }
+}

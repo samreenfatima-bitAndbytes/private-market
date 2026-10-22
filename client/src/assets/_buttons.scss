@@ -1,0 +1,89 @@
+.theme-btn {
+  width: auto;
+  min-height: 45px;
+  height: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  border-radius: 0px;
+  border: 0;
+  color: var(--white) !important;
+  background: #004aad ;
+  padding: 5px 40px;
+
+  &:hover{
+    color: #FFF !important;
+  }
+}
+
+
+
+.social-btn {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  border-radius: 0px;
+  color: var(--white);
+  column-gap: 10px;
+  margin-top: 10px;
+  cursor: alias !important;
+
+  &.facebook-btn {
+    background-color: #4866a8;
+  }
+
+  &.google-btn {
+    background-color: #da3f34;
+  }
+
+  &.twiter-btn {
+    background-color: #33ccff;
+  }
+}
+
+button {
+  &.btn-link {
+    color: var(--white);
+  }
+}
+
+.btn {
+  font-size: 14px;
+  line-height: 24px;
+  min-height: 50px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 25px;
+  text-decoration: none;
+  border: 0;
+  width: auto;
+}
+
+.block-btn {
+  width: auto;
+  min-height: 45px;
+  height: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+  border-radius: 0px;
+  border: 0;
+  color: var(--white);
+  background: rgba(var(--bs-danger-rgb));
+  padding: 5px 40px;
+}

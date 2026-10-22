@@ -1,0 +1,19 @@
+# Pull the Node image from Docker Hub
+FROM node:18 as frontend
+
+# Setting Working Directory
+WORKDIR /private-markets-ui
+
+# Copying only package.json
+COPY package.json .
+
+# Install Dependencies
+RUN npm install 
+
+# Copy rest of the code to container
+COPY . .
+
+RUN npm run build
+
+EXPOSE 2059
+CMD npm run start

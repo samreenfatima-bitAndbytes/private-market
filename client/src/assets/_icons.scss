@@ -1,0 +1,253 @@
+/* Global icon polish — brand color, clearer weight, soft chips */
+
+:root {
+  --icon-brand: #004aad;
+  --icon-brand-soft: rgba(0, 74, 173, 0.1);
+  --icon-brand-hover: #003580;
+  --icon-muted: #3d4f66;
+  --icon-danger: #c62828;
+  --icon-success: #1b7a3d;
+}
+
+/* Default brand tint — exclude admin action chips & logo */
+.side-icon,
+.navicon,
+.eye-icon,
+.eyeicon,
+.hd-cart,
+.navbar .nav-link svg,
+.navbar a:not(.logo) svg,
+.property_list_item svg,
+.single_property_top svg,
+.sidebar-links svg {
+  color: var(--icon-brand);
+}
+
+/* Admin menu icons follow link color (white default, blue on hover/active) */
+.sidebarmain .sidelist svg path,
+.sidebarmain .sidelist svg [fill] {
+  fill: currentColor !important;
+}
+
+/* Override dull gray fills in legacy SVGs (not brand logo / action chips) */
+.side-icon svg path,
+.side-icon svg [fill],
+.sidebar-links svg path,
+.navicon svg path,
+.employee-sidebar svg path {
+  fill: currentColor !important;
+}
+
+.side-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  flex-shrink: 0;
+  margin-right: 0.65rem;
+  border-radius: 10px;
+  background: var(--icon-brand-soft);
+  color: var(--icon-brand);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+
+  svg,
+  svg * {
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+}
+
+.sidebar-links a:hover .side-icon,
+.sidebar-links li:hover .side-icon {
+  background: rgba(0, 74, 173, 0.16);
+  color: var(--icon-brand-hover);
+  transform: scale(1.05);
+}
+
+.sidebar-links a.active .side-icon,
+.sidebar-links li a.active .side-icon {
+  background: var(--icon-brand);
+  color: #fff;
+
+  svg path,
+  svg [fill] {
+    fill: currentColor !important;
+  }
+}
+
+/* Brand logo — never shrink with icon rules */
+.navbar a.logo,
+a.logo,
+.admin-logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+
+  svg {
+    height: auto !important;
+    display: block;
+  }
+}
+
+.navbar a.logo svg,
+a.logo svg {
+  width: min(220px, 42vw) !important;
+  max-height: 48px;
+}
+
+/* Header / nav action icons (exclude logo) */
+.navbar .nav-link:not(.btn) svg,
+.navbar a:not(.logo):not(.btn) svg,
+header a:not(.logo):not(.admin-logo) svg,
+.header a:not(.logo):not(.admin-logo) svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  vertical-align: -0.15em;
+  filter: none;
+  opacity: 1;
+}
+
+.hd-cart,
+.navbar .hd-cart {
+  color: var(--icon-brand) !important;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+/* Favourites heart */
+.property_list_item svg,
+.single_property_top svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  color: var(--icon-brand);
+  filter: drop-shadow(0 1px 1px rgba(0, 74, 173, 0.15));
+}
+
+.property_list_item .text-danger svg,
+.property_list_item svg[color="red"],
+.single_property_top .text-danger svg {
+  color: #e53935 !important;
+}
+
+/* Password eye */
+.eye-icon,
+.eyeicon,
+.password-input-wrap .eye-icon {
+  color: var(--icon-brand) !important;
+  opacity: 0.9;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+    color: var(--icon-brand-hover) !important;
+  }
+
+  svg {
+    width: 1.15rem;
+    height: 1.15rem;
+  }
+}
+
+/*
+ * Admin / table action chips — white glyph on solid tinted bg.
+ * Do NOT force brand-blue color onto these SVGs.
+ */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: nowrap;
+
+  .btn-small,
+  .btn.btn-small,
+  button.btn-small,
+  .btn-danger.btn-small {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 2.15rem !important;
+    height: 2.15rem !important;
+    min-width: 2.15rem !important;
+    min-height: 2.15rem !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+    border-radius: 50% !important;
+    border: 0 !important;
+    box-shadow: none;
+
+    svg {
+      width: 0.9rem !important;
+      height: 0.9rem !important;
+      color: #ffffff !important;
+      flex-shrink: 0;
+    }
+
+    svg path,
+    svg [fill] {
+      fill: currentColor !important;
+    }
+
+    &:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+  }
+
+  .style-one {
+    background-color: #1b9e5a !important;
+    color: #fff !important;
+
+    &:hover:not(:disabled) {
+      background-color: #178a4e !important;
+    }
+  }
+
+  .style-two {
+    background-color: #e53935 !important;
+    color: #fff !important;
+  }
+
+  .style-six {
+    background-color: #004aad !important;
+    color: #fff !important;
+
+    &:hover:not(:disabled) {
+      background-color: #003580 !important;
+    }
+  }
+
+  .btn-danger {
+    background-color: #e53935 !important;
+    color: #fff !important;
+
+    &:hover:not(:disabled) {
+      background-color: #c62828 !important;
+    }
+  }
+}
+
+.delete-btn,
+button.delete-btn {
+  svg {
+    color: #fff !important;
+  }
+}
+
+/* Soft lift on interactive icons */
+.sidebar-links a,
+.navbar a,
+.btn {
+  svg {
+    transition:
+      transform 0.15s ease,
+      color 0.15s ease,
+      opacity 0.15s ease;
+  }
+}

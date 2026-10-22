@@ -1,0 +1,30 @@
+.searchsection {
+  &.my-fav {
+    .property_list_item {
+      .single_property_top {
+        p {
+          color: #535353;
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+
+.gross-drop {
+  width: 200px !important;
+  text-align: left;
+  background: #fff !important;
+  box-shadow: none !important;
+  line-height: 35px !important;
+  border-radius: 4px;
+  margin-left: 5px;
+  .dropdown-item {
+    padding: 10px 10px;
+  }
+}
+.divide {
+  max-width: 20px;
+  text-align: center;
+}

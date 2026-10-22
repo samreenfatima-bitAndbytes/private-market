@@ -1,0 +1,199 @@
+.pm-select {
+  position: relative;
+  width: 100%;
+  min-width: 160px;
+
+  &.gross-drop {
+    max-width: 260px;
+  }
+
+  &.rounded-pill .pm-select__trigger {
+    border-radius: 999px;
+    padding-left: 1.25rem;
+    padding-right: 1.1rem;
+  }
+
+  /* Sit inside an existing bordered field (home search, etc.) */
+  &--embedded {
+    min-width: 0;
+
+    .pm-select__trigger {
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      padding-left: 0;
+      padding-right: 0;
+
+      &:hover,
+      &:focus,
+      &:focus-visible {
+        border: 0;
+        box-shadow: none;
+        outline: none;
+      }
+    }
+
+    &.is-open .pm-select__trigger {
+      border: 0;
+      box-shadow: none;
+    }
+  }
+
+  &.is-disabled {
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+    width: 100%;
+    min-height: 44px;
+    padding: 0.55rem 0.95rem;
+    border: 1px solid #d5dde8;
+    border-radius: 10px;
+    background: #fff;
+    color: #12253f;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(16, 40, 80, 0.04);
+    transition:
+      border-color 0.18s ease,
+      box-shadow 0.18s ease,
+      background-color 0.18s ease;
+
+    &:hover {
+      border-color: #b8c6db;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+      border-color: #004aad;
+      box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.15);
+    }
+
+    &.is-placeholder .pm-select__label {
+      color: #7a8aa0;
+      font-weight: 400;
+    }
+  }
+
+  &.is-open .pm-select__trigger {
+    border-color: #004aad;
+    box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.15);
+  }
+
+  &__label {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__chevron {
+    flex-shrink: 0;
+    width: 0.7rem;
+    height: 0.7rem;
+    color: #004aad;
+    transition: transform 0.2s ease;
+  }
+
+  &.is-open .pm-select__chevron {
+    transform: rotate(180deg);
+  }
+
+  &__menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    z-index: 40;
+    margin: 0;
+    padding: 0.35rem;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #e4ebf4;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(16, 40, 80, 0.12);
+    max-height: 240px;
+    overflow-y: auto;
+    animation: pm-select-in 0.16s ease;
+  }
+
+  &__option {
+    padding: 0.55rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.92rem;
+    color: #243447;
+    cursor: pointer;
+    transition:
+      background-color 0.12s ease,
+      color 0.12s ease;
+
+    &:hover {
+      background: rgba(0, 74, 173, 0.08);
+      color: #004aad;
+    }
+
+    &.is-active {
+      background: #004aad;
+      color: #fff;
+      font-weight: 600;
+    }
+  }
+}
+
+@keyframes pm-select-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Native select polish (admin / forms not yet migrated) */
+select.form-select,
+select.form-control,
+.form-select,
+.selectcustom > select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23004aad' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9rem center;
+  background-size: 12px 8px;
+  border: 1px solid #d5dde8;
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 0.55rem 2.4rem 0.55rem 0.95rem;
+  color: #12253f;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(16, 40, 80, 0.04);
+  cursor: pointer;
+
+  &:focus {
+    border-color: #004aad;
+    box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.15);
+    outline: none;
+  }
+}
+
+.selectcustom {
+  position: relative;
+
+  > svg {
+    display: none; /* use CSS arrow instead */
+  }
+}

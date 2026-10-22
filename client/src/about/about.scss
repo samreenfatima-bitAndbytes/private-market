@@ -1,0 +1,42 @@
+p {
+    color: #535353;
+}
+
+
+
+.aboutus {
+    span {
+        font-size: 18px;
+        color: #004AAD;
+        font-weight: 600;
+    }
+
+    h2 {
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    .aboutsecond {
+        background: #EBF3FF;
+        padding: 60px 0;
+    }
+
+    .about-img {
+        width: 100%;
+        min-height: 420px;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 14px;
+    }
+
+    .cms-content h2 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #12253f;
+        line-height: 1.25;
+    }
+}
